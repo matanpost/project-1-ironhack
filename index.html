@@ -11,18 +11,27 @@
   <body>
     
     <div class="game-intro">
-      <div><img src="./images/intro leprachaun.jpg" alt="" class="topLeft"></div>
       <h1><img src="./images/old bottle.png" alt="" class="logo-img" />  MOONSHINER</h1>
-      <br />
-      <button id="start-button">Start</button>
-      <p>Use the arrow keys to move!</p>
       
-      <div class="bottom"><img src="./images/into woods.jpg" alt="" class="woods"><img src="./images/first page distill.pnh.png" alt="" class="distil"></div>
+      <p>Use the arrow keys to move!</p>
+      <button id="start-button">New Game</button>
+      
+      <div class="bottom">
+        <img src="./images/into woods.jpg" alt="" class="woods">
+        <img src="./images/first page distill.pnh.png" alt="" class="distil">
+        <img src="./images/intro leprachaun.jpg" alt="" class="moonshiner">
+      </div>
     </div>
    
 
     <div id="game-board">
       <canvas id="canvas" width="800" height="1000"></canvas>
+    </div>
+    
+    <div class="game-over-screen">
+     <h1>BUSTED!</h1>
+     <img src="./images/busted.jpg" alt="">
+     <button id="restart-button">Try Again</button>
     </div>
 
     <script type="text/javascript" src="script.js"></script>

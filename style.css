@@ -7,14 +7,16 @@ body {
   .game-intro {
     float: center;
     padding: 0% 10%;
+    height: 1100px;
+    width: 1100px;
   }
   
-  .topLeft {
+  .moonshiner {
     display: flex;
     justify-content: flex-start;
-    padding-top: 100px;
-    padding-left: 100px;
-    height: 300px;
+    padding-top: 270px;
+    padding-left: 0;
+    height: 235px;
   }
 
   .bottom{
@@ -23,16 +25,17 @@ body {
   }
   .distil {
     height: 200px;
-    padding-top: 200px;
+    padding-top: 310px;
   }
   .woods {
-    height: 400px;
+    height: 460px;
     flex-grow: 150%;
+    padding-top: 60px;
   }
 
   .game-intro h1{ 
     font-family: "Irish Grover";
-    font-size: 90px;
+    font-size: 100px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
@@ -74,4 +77,16 @@ body {
       float: center;
       padding: 20px 0px;
   }
+
+
+.game-over-screen {
+ font-family: "Irish Grover"; 
+ font-size: 90px;
+ height: 1100px;
+ width: 1100px;  
+}  
+
+.game-over-screen img{
+ padding-top: 0px;
+}
   
