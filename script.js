@@ -2,6 +2,10 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 canvas.style.border = '2px solid gold';
 
+let currentLevel = 0
+const levelView = document.getElementById("level")
+levelView.innerText = currentLevel + 1
+
 // backgrounds
 const level1Img = new Image()
 level1Img.src = 'images/backgrounddetailed1.png'
@@ -54,16 +58,15 @@ let isMovingDown = false
 
 //bad guys
 const policeImg = new Image()
-policeImg.src = 'images/police.png'
+policeImg.src = 'images/police.jpg'
 
 const policeImgWidth = 50
 const policeImgHeit = 60
 
 //different levels with the backgrounds and the badguys movement
-let currentLevel = 0
 
 const levels = [
-    {background: level1Img, name: "The wonderful forest", badGuys: [{
+    {background: level1Img, name: "1", badGuys: [{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -90,7 +93,7 @@ const levels = [
         'speed': 3
         },
     ]},
-    {background: level2Img, badGuys:[{
+    {background: level2Img, name: "2", badGuys:[{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -117,7 +120,7 @@ const levels = [
         'speed': 6
         },
     ]},
-    {background: level3Img, badGuys:[{
+    {background: level3Img, name: "3", badGuys:[{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -144,7 +147,7 @@ const levels = [
         'speed': 8
         },
     ]},
-    {background: level4Img, badGuys:[{
+    {background: level4Img, name: "4", badGuys:[{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -171,7 +174,7 @@ const levels = [
         'speed': 10
         },
     ]},
-    {background: level5Img, badGuys:[{
+    {background: level5Img, name: "5", badGuys:[{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -198,7 +201,7 @@ const levels = [
         'speed': 11
         },
     ]},
-    {background: level6Img, badGuys:[{
+    {background: level6Img, name: "6", badGuys:[{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -225,7 +228,7 @@ const levels = [
         'speed': 13
         },
     ]},
-    {background: level7Img, badGuys:[{
+    {background: level7Img, name: "7", badGuys:[{
         'name': 'badGuy1',
         'x': 200,
         'y': 750,
@@ -318,6 +321,7 @@ const animate = () => {
   // If your character reaches the top of the screen
   if (moonshinerY < 200){
       currentLevel += 1
+      levelView.innerText = currentLevel + 1
       moonshinerY = canvas.height - moonshinerHeit - 100
       moonshinerX = canvas.width / 2 - moonshinerWidth / 2
     }  
@@ -403,16 +407,20 @@ const startGame = () => {
     document.querySelector('.game-intro').style.display = 'none'
     document.querySelector('.game-over-screen').style.display = 'none'
     canvas.style.display = 'block';
+    levelView.style.display = 'block'
+    document.querySelector('.game-board').style.display = 'block'
     animate()
-    console.log('123')
+    
 }
 
   // Events:
   // game start
 window.addEventListener('load', () => {
-   canvas.style.display = 'none';
-   document.querySelector('.game-over-screen').style.display = 'none'
-    document.getElementById('start-button').onclick = () => {
+     /* canvas.style.display = 'none';
+     levelView.style.display = 'none' */
+     document.querySelector('.game-board').style.display = 'none'
+     document.querySelector('.game-over-screen').style.display = 'none'
+     document.getElementById('start-button').onclick = () => {
       startGame()
       
     }
@@ -453,8 +461,11 @@ window.addEventListener('load', () => {
     moonshinerY = canvas.height - moonshinerHeit - 100
     moonshinerX = canvas.width / 2 - moonshinerWidth / 2
     currentLevel = 0
+    levelView.innerText = currentLevel + 1
     Lives = 3
-    canvas.style.display = 'none';
+    /* canvas.style.display = 'none';
+    levelView.style.display = 'none' */
+    document.querySelector('.game-board').style.display = 'none'
     document.querySelector('.game-over-screen').style.display = 'none'
     document.querySelector('.game-intro').style.display = 'block'
   })
