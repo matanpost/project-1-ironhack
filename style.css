@@ -74,8 +74,12 @@ body {
   }
   
   #game-board {
-      float: left;
+     
       padding: 20px 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
   }
 
 
@@ -90,18 +94,17 @@ body {
  padding-top: 0px;
 }
 
-#levels {
+
+.levels-lives {
     font-family: "Irish Gover";
-    font-size: 30px;
-    height: 40px;
-    width: 20px;
+    font-size: 50px;
+    height: 100px;
+    width: 750px;
     color: #691c25;
+    font-weight: 550;
 }
 
-#lives #levels {
-    font-family: "Irish Gover";
-    font-size: 30px;
-    height: 40px;
-    width: 70px;
-    color: #691c25;
+.botleScore1 {
+    height: 85px;
+    width: 80px;
 }

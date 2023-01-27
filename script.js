@@ -6,16 +6,15 @@ let currentLevel = 0
 const levelView = document.getElementById("level")
 levelView.innerText = currentLevel + 1
 
-const botleScore = new Image()
-botleScore.src = 'images/botleScore.jpg'
+
 let Lives = 3
 const livesViews = document.getElementById("lives")
 if (Lives === 3){
-    livesViews.innerHTML = botleScore + botleScore + botleScore
+    livesViews.innerHTML = `<div><img src="images/botleScore.jpg" class= "botleScore1"/><img src="images/botleScore.jpg" class= "botleScore1"/><img src="images/botleScore.jpg" class= "botleScore1"/></div>`
 } else if (Lives === 2){
-    livesViews.innerHTML = botleScore + botleScore
+    livesViews.innerHTML = `<div><img src="images/botleScore.jpg" class= "botleScore1"/><img src="images/botleScore.jpg" class= "botleScore1"/></div>`
 } else if (Lives === 1){
-    livesViews.innerHTML = botleScore
+    livesViews.innerHTML = `<div><img src="images/botleScore.jpg" class= "botleScore1"/></div>`
 }
 
 //audio
@@ -481,6 +480,8 @@ window.addEventListener('load', () => {
     Lives = 3
     /* canvas.style.display = 'none';
     levelView.style.display = 'none' */
+    
+    levelView.style.display = 'none'
     document.querySelector('.game-board').style.display = 'none'
     document.querySelector('.game-over-screen').style.display = 'none'
     document.querySelector('.game-intro').style.display = 'block'
