@@ -6,6 +6,22 @@ let currentLevel = 0
 const levelView = document.getElementById("level")
 levelView.innerText = currentLevel + 1
 
+const botleScore = new Image()
+botleScore.src = 'images/botleScore.jpg'
+let Lives = 3
+const livesViews = document.getElementById("lives")
+if (Lives === 3){
+    livesViews.innerHTML = botleScore + botleScore + botleScore
+} else if (Lives === 2){
+    livesViews.innerHTML = botleScore + botleScore
+} else if (Lives === 1){
+    livesViews.innerHTML = botleScore
+}
+
+//audio
+const audio = new Audio('audio/moonshiner.wav');
+audio.preload
+
 // backgrounds
 const level1Img = new Image()
 level1Img.src = 'images/backgrounddetailed1.png'
@@ -37,7 +53,6 @@ moonshiner.src = 'images/temp-moonshiner.jpg'
 const moonshinerWidth = 50
 const moonshinerHeit = 60
 
-let Lives = 3
 
 // game over
 let gameOver = false
@@ -409,6 +424,7 @@ const startGame = () => {
     canvas.style.display = 'block';
     levelView.style.display = 'block'
     document.querySelector('.game-board').style.display = 'block'
+    audio.play()
     animate()
     
 }
